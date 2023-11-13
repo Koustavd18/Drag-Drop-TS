@@ -1,1 +1,3 @@
-console.log('hi');
+(function (){
+    console.log('My First TS project');
+}());
