@@ -157,4 +157,18 @@ interface Validatable {
   }
   
   const prjInput = new ProjectInput();
+
+  class ProjectList {
+    templateElement : HTMLTemplateElement;
+    hostElement : HTMLDivElement;
+    element: HTMLElement;
+
+    constructor(private type : 'active' | 'finished') {
+        this.templateElement = <HTMLTemplateElement> document.getElementById('project-list')!;
+        this.hostElement = <HTMLDivElement> document.getElementById('app')!;
+        const importedNode = document.importNode(this.templateElement.content, true);
+        this.element = importedNode.firstElementChild as HTMLElement;
+    }
+
+  }
   
